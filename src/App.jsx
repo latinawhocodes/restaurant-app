@@ -1,4 +1,4 @@
-import { Menu } from '../restaurant-app/src/Menu';
+import { Menu } from './Menu';
 import { Cart } from './Cart';
 import { Orders } from './Orders';
 import { Order } from './Order';
@@ -13,12 +13,7 @@ export function App() {
         </nav>
       </header>
       <main>
-        <Orders />
-        <Cart />
         <Menu />
-        <Order />
-        <Register />
-        <Login />
       </main>
       <footer></footer>
     </>

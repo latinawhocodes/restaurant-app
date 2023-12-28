@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getMenuItems } from './utilities';
+import { getMenuItems, toCurrency } from './utilities';
+
 export const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
   useEffect(() => {
@@ -11,7 +12,21 @@ export const Menu = () => {
   return (
     <>
       <h1>Menu</h1>
-      {menuItem.name}
+      <section id="itemsWrapper">
+        <section>
+          <div>
+            <img src={menuItem.imageUrl} alt={menuItem.name} style={{ height: 200 }} />
+          </div>
+          <div className="menuDetails">
+            <h2>{menuItem.name}</h2>
+            <p>{menuItem.description}</p>
+            <p>{toCurrency(menuItem.price)}</p>
+            <div>
+              <button>Add</button>
+            </div>
+          </div>
+        </section>
+      </section>
     </>
   )
 }
